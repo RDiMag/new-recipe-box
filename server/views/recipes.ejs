@@ -12,7 +12,7 @@
       <a href="/">Home</a>
       <a href="/favorites"> Favorites</a>
     </nav>
-
-    <%= recipe.forEach(function(recipe, index){ article.label }) =%>
+    <!-- I am getting an error in this function call, and I'm not sure why. The error is " SyntaxError: Unexpected token ')' " -->
+    <%= recipe.forEach(function(recipe, index){ recipe.label }) =%>
   </body>
 </html>
