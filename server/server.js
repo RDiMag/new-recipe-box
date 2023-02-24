@@ -9,6 +9,7 @@ const logger = require('morgan')
 const connectDB = require('./config/database')
 const mainRoutes = require('./routes/main')
 const todoRoutes = require('./routes/todos')
+const axios = require('axios')
 
 require('dotenv').config({path: './config/.env'})
 
@@ -40,7 +41,17 @@ app.use(flash())
   
 app.use('/', mainRoutes)
 app.use('/todos', todoRoutes)
- 
+
+// Edamam API
+
+// app.get('/recipes/:query', async (req, res) => {
+//   const response = await axios.get(
+//     `https://api.edamam.com/api/recipes/v2?type=public&q=${req.params.query}&app_id=${process.env.APP_ID}&app_key=${process.env.APP_KEY}`
+//   )
+//   console.log(response.data.hits)
+//   res.json(response.data.hits)
+// })
+
 app.listen(process.env.PORT, ()=>{
     console.log(`Server is running on port ${process.env.PORT}!`)
 })    
